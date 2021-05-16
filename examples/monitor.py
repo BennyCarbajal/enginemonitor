@@ -3,7 +3,7 @@
 __author__ = "Benny Carbajal"
 __copyright__ = "Copyright 2021, ningh"
 __credits__ = [ "Benny Carbajal" ]
-__license__ = "GPL"
+__license__ = "MIT"
 __version__ = "1.0.0"
 __maintainer__ = [ "Benny Carbajal" ]
 __email__ = [ "benny.carbajalb@gmail.com" ]
