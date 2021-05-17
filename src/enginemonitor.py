@@ -22,6 +22,7 @@ class Engine( object ) :
 
  def getSize( self, bytes, suffix = 'B' ) :
   """
+  Return the bytes unit and suffix.
   """
   factor = 1024
   for unit in [ '', 'K', 'M', 'G', 'T', 'P' ]:
@@ -32,18 +33,21 @@ class Engine( object ) :
 
  def getIp( self ) :
   """
+  Return IP address.
   """
   return socket.gethostbyname( socket.gethostname() )
 
 
  def getUser( self ) :
   """
+  Return the current username.
   """
   return os.environ.get( 'USERNAME' )
 
 
  def getComputer( self ) :
   """
+  Return the current computername.
   """
   return os.environ.get( 'COMPUTERNAME' )
 
