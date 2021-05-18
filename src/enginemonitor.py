@@ -54,6 +54,7 @@ class Engine( object ) :
 
  def getCpu( self ) :
   """
+  Return the name of Processor.
   """
   for pr in self.conn.Win32_Processor():
    return pr.Name
@@ -61,6 +62,7 @@ class Engine( object ) :
 
  def getCores( self ) :
   """
+  Return the physical cores and total cores.
   """
   out = {
    'PhysicalCores': psutil.cpu_count( logical=False ),
@@ -71,6 +73,7 @@ class Engine( object ) :
 
  def getRam( self ):
   """
+  Return the size of Ram Memory.
   """
   mem = psutil.virtual_memory()
   return self.getSize(mem.total)
@@ -78,6 +81,7 @@ class Engine( object ) :
 
  def getBoard( self ):
   """
+  Return the motherboard name.
   """
   cs = self.conn.Win32_ComputerSystem()[0]
   return cs.Model
@@ -85,6 +89,7 @@ class Engine( object ) :
 
  def getGpu( self ):
   """
+  Return a list of GPUs.
   """
   out = []
   for vc in self.conn.Win32_VideoController():
@@ -94,6 +99,7 @@ class Engine( object ) :
 
  def getDisks( self ):
   """
+  Return a list of dictionaries.
   """
   out = []
   for ld in self.conn.Win32_logicaldisk() :
