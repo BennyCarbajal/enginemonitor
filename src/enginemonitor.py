@@ -125,6 +125,7 @@ class Engine( object ) :
 
  def getSensorBySpecs( self, hwType, snsrType, filename='bySpecs' ) :
   """
+  By subprocess returns sensor information from the requested hardware.
   """
   subprocess.check_output(
    os.path.abspath( os.path.dirname( __file__ ) ) + "\\monitor\\GarboMonitor {0} {1} {2}".format(
@@ -141,6 +142,7 @@ class Engine( object ) :
 
  def getSensorsByHardware( self, hwType, filename='byHardware' ) :
   """
+  By subprocess returns the information of all sensors of the requested hardware
   """
   subprocess.check_output(
    os.path.abspath( os.path.dirname( __file__ ) ) + "\\monitor\\GarboMonitor {0} {1}".format( hwType, filename ),
@@ -153,6 +155,7 @@ class Engine( object ) :
 
  def getSensors( self, filename='sensors' ) :
   """
+  By subprocess returns the information of all sensors of each important hardware
   """
   subprocess.check_output(
    os.path.abspath( os.path.dirname( __file__ ) ) + "\\monitor\\GarboMonitor {}".format( filename ),
@@ -170,6 +173,7 @@ class Engine( object ) :
 
  def getMonitorServiceBySpecs( self, hwType, snsrType ) :
   """
+  By service returns sensor information from the requested hardware.
   """
   out = { 'name': '', 'type': '', 'sensors': [] }
   try :
@@ -187,6 +191,7 @@ class Engine( object ) :
 
  def getMonitorServiceByHardware( self, hwType ) :
   """
+  By service returns the information of all sensors of the requested hardware
   """
   try :
    byHw = list( self.db.hardware.find( { 'type': hwType }, { '_id': 0 } ) )
@@ -197,6 +202,7 @@ class Engine( object ) :
 
  def getMonitorService( self ) :
   """
+  By service returns the information of all sensors of each important hardware
   """
   try :
    byHw = list( self.db.hardware.find( {}, { '_id': 0 } ) )
