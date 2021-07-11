@@ -110,10 +110,13 @@ class Engine( object ) :
    inside = {
     'divice': ld.DeviceID,
     'type': kind,
-    'size': self.getSize( int( ld.Size ) ),
-    'free': self.getSize( int( ld.FreeSpace ) ),
     'provider': ld.ProviderName
    }
+   try:
+    inside[ 'size' ] = self.getSize( int( ld.Size ) )
+    inside[ 'free' ] = self.getSize( int( ld.FreeSpace ) )
+   except Exception as e:
+    pass
    out.append( inside )
   return out
 
