@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 
 __author__ = "Benny Carbajal"
-__copyright__ = "Copyright 2021, ningh"
+__copyright__ = "Copyright 2021, nginh"
 __credits__ = [ "Benny Carbajal" ]
 __license__ = "MIT"
 __version__ = "1.0.0"
@@ -25,7 +25,7 @@ def main() :
    'gpu': ngin.getGpu(),
    'logical_disk': ngin.getDisks()
   },
-  'sensors': ngin.getSensorBySpecs( "CPU", "Temperature" )
+  'sensors': ngin.getSensorBySpecs( "GPU", "Temperature" )
  }, indent=2 )
  print( out )
 

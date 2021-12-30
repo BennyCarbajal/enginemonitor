@@ -108,7 +108,7 @@ class Engine( object ) :
    elif ld.DriveType == 4 :
     kind = 'Network Drive'
    inside = {
-    'divice': ld.DeviceID,
+    'device': ld.DeviceID,
     'type': kind,
     'provider': ld.ProviderName
    }
